@@ -1,3 +1,7 @@
+/* --- FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
+
 /* --- UNIVERSAL STYLES --- */
 body {
     font-family: Arial, sans-serif;
@@ -41,6 +45,22 @@ body {
 .masthead .container {
     position: relative;
     z-index: 1;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    position: absolute;
+    display: inline-flex;
+    right: 48%;
+    top: 0%;
+    border: solid 60px;
+    border-color: rgb(255, 255, 255) transparent transparent transparent;
+}
+
+.mb-4 {
+    font-family: "MedievalSharp", cursive;
+    font-weight: bold;
 }
 
 /* --- TAGS --- */
@@ -286,7 +306,8 @@ body {
 
 /* --- INDEX PAGE --- */
 .masthead.index-header {
-    background-image: url('assets/images/background-images/index-bg.gif');
+    background-image: url('assets/images/background-images/index-bg.png');
+    padding: 0;
 }
 
 /* --- DASHBOARD PAGE --- */
