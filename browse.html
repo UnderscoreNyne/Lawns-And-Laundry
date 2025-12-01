@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodShare - Browse</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- jQuery Stuff for styling purposes -->
+    <!-- I have added scripts, and css that use jQuery to obtain a double dot slider -->
+    <!-- Basic html and css does not provide a double dot slider, and to stick to my medium-fidelity design I need one -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">FoodShare</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="browse.html">Browse</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login/Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead browse-header">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>FoodShare System</h1>
+                    <span class="subheading">Some many options offered at a discount!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main content container -->
+<main class="container py-5">
+    <!-- Page-specific content starts here -->
+    <!-- Search Input -->
+<div class="container px-4 px-lg-5 mb-4">
+    <h2>Search</h2>
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for meals..."
+        class="form-control">
+</div>
+
+<!-- Filter Form Section -->
+<div class="container px-4 px-lg-5 mb-4">
+    <form>
+        <div class="row justify-content-center">
+
+            <!-- Price Range Slider -->
+<div class="col-md-3 mb-3">
+    <label class="form-label">Price Range ($0 – $20)</label>
+
+    <div id="price-slider"></div>
+
+    <p class="mt-2">
+        <strong>Selected:</strong>
+        <span id="price-amount">$0 - $20</span>
+    </p>
+</div>
+
+            <!-- Diet Filter -->
+            <div class="col-md-3 mb-3">
+                <label class="form-label">Diet</label>
+                <select class="form-control">
+                    <option value="">Any</option>
+                    <option value="keto">Keto</option>
+                    <option value="dairy-free">Dairy-Free</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="high-protein">High Protein</option>
+                    <option value="paleo">Paleo</option>
+                </select>
+            </div>
+
+            <!-- Allergens Filter -->
+            <div class="col-md-3 mb-3">
+                <label class="form-label">Allergens</label>
+                <select class="form-control">
+                    <option value="">Any</option>
+                    <option value="nut-free">Nut-Free</option>
+                    <option value="gluten-free">Gluten-Free</option>
+                    <option value="soy-free">Soy-Free</option>
+                    <option value="shellfish-free">Shellfish-Free</option>
+                    <option value="egg-free">Egg-Free</option>
+                    <option value="egg-free">Dairy-Free</option>
+                </select>
+            </div>
+
+            <!-- Meal Type Filter -->
+            <div class="col-md-3 mb-3">
+                <label class="form-label">Portion Size</label>
+                <select class="form-control">
+                    <option value="">Any</option>
+                    <option value="breakfast">Light</option>
+                    <option value="lunch">Medium</option>
+                    <option value="dinner">Large</option>
+                    <option value="snack">Huge</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center">
+                    <!-- Submit Button -->
+            <div class="col-md-3 text-center">
+                <button class="btn btn-primary w-100">
+                    Filter
+                </button>
+            </div>
+                   <!-- Reset Button -->
+            <div class="col-md-3 text-center">
+                <button type="reset" class="btn btn-secondary w-100">
+                    Reset
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>
+<hr>
+<h3>Results:</h3>
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+<!-- ===== Card 1 ===== -->
+<div class="col-md-6 mb-4">
+    <div class="card h-100 browse-card">
+         <img src="assets/images/placeholders/club_sandwich.jpg" alt="Club Sandwich Image">
+        <div class="card-body">
+            <h2 class="post-title"><a href="item_details.html">Club Sandwich</a></h2>
+            <div class="tags-container">
+                <span class="tag high-protein">High Protein</span>
+                <span class="tag medium">Medium</span>
+            </div>
+            <div class="bottom-row">
+                <h6>Sandwich Land. Co</h6>
+                <span class="price">$5</span>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- ===== Card 1 END ===== -->
+
+        <!-- More Cards: -->
+        <div class="col-md-6 mb-4">
+    <div class="card h-100 browse-card">
+         <img src="assets/images/placeholders/vegan_pasta.jpg" alt="Food Image">
+        <div class="card-body">
+            <h2 class="post-title"><a href="item_details.html">Creamy Vegan Pasta</a></h2>
+            <div class="tags-container">
+                <span class="tag vegan">Vegan</span>
+                <span class="tag large">Large</span>
+            </div>
+            <div class="bottom-row">
+                <h6>Crazy Vegan Land</h6>
+                <span class="price">$7</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <div class="col-md-6 mb-4">
+    <div class="card h-100 browse-card">
+         <img src="assets/images/placeholders/cookie.jpg" alt="Food Image">
+        <div class="card-body">
+            <h2 class="post-title"><a href="item_details.html">Everything Free Cookies</a></h2>
+            <div class="tags-container">
+                <span class="tag dairy-free">Dairy-Free</span>
+                <span class="tag gluten-free">Gluten-Free</span>
+                <span class="tag egg-free">Egg-Free</span>
+                <span class="tag nut-free">Nut-Free</span>
+                <span class="tag small">Small</span>
+            </div>
+            <div class="bottom-row">
+                <h6>Crumble Cookies</h6>
+                <span class="price">$12</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</div>
+
+
+
+</main>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Script to make double dot slider possible, only helps visually! -->
+<script>
+$(function() {
+    $("#price-slider").slider({
+        range: true,
+        min: 0,
+        max: 20,
+        values: [0, 20],
+        slide: function(event, ui) {
+            $("#price-amount").text("$" + ui.values[0] + " - $" + ui.values[1]);
+        }
+    });
+
+    $("#price-amount").text("$" +
+        $("#price-slider").slider("values", 0) +
+        " - $" +
+        $("#price-slider").slider("values", 1)
+    );
+});
+</script>
+</body>
+</html>

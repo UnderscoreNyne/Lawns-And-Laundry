@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FoodShare - Home</title>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body class="home-page">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">FoodShare</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="browse.html">Browse</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login/Register</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<!-- Header / Hero Section -->
+<header class="masthead index-header">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading text-center text-white">
+                    <h1>Welcome to FoodShare</h1>
+                    <span class="subheading">Share surplus food and support your community</span>
+                    <div class="mt-4 d-flex justify-content-center">
+                        <a href="browse.html" class="btn btn-primary btn-lg">Browse Food</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Intro Section -->
+<main class="container py-5 text-center">
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8">
+            <h2 class="mb-4">What is FoodShare?</h2>
+            <p class="lead">
+                FoodShare is a B2B web application where food providers (restaurants, groceries, caterers,
+and community kitchens) create profiles, upload available meals/produce boxes with details
+(ingredients, allergens, portion size) and prices or donation flags, and manage customer
+orders. End-users (households, students, and community members) can browse items, view
+nutrition and pickup/delivery windows, request orders, pay or redeem vouchers, and receive
+real-time status updates. The platform acts as a marketplace for multiple organizations to
+offer discounted surplus meals and community food boxes across Toronto, supporting both
+sales and donation workflows.
+            </p>
+            <hr class="my-4">
+            <p>
+                Start by browsing our available food items or create an account to start sharing your surplus.
+                You can also choose to login as a client or provider depending on your role.
+            </p>
+        </div>
+    </div>
+
+    <!-- Call-to-action Cards -->
+    <div class="row justify-content-center text-center gap-4">
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">I'm a Client</h5>
+                    <p class="card-text">Browse available food items or request orders easily.</p>
+                    <a href="login.html" class="btn btn-primary">Login / Register</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">I'm a Provider</h5>
+                    <p class="card-text">Share surplus food with your community safely.</p>
+                    <a href="provider-login.html" class="btn btn-success">Login / Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

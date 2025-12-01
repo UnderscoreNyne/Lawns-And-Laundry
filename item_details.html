@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>FoodShare - Item Details</title>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">FoodShare</a>
+        <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="browse.html">Browse</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead details-header">
+    <div class="container px-4 px-lg-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+
+                <div class="item-card browse-card">
+                    <img alt="Everything Free Cookies" src="assets/images/placeholders/cookie.jpg">
+                    <div class="card-body">
+                        <h2 class="post-title"><a href="#">Everything Free Cookies</a></h2>
+
+                        <div class="tags-container mt-2">
+                            <span class="tag dairy-free">Dairy-Free</span>
+                            <span class="tag gluten-free">Gluten-Free</span>
+                            <span class="tag egg-free">Egg-Free</span>
+                            <span class="tag nut-free">Nut-Free</span>
+                            <span class="tag small">Small</span>
+                        </div>
+
+                        <div class="bottom-row mt-2">
+                            <h6 class="company">Made by: Crumble Cookies</h6>
+                            <span class="price">$12</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container py-5">
+
+    <div class="item-details mt-4">
+
+        <!-- Ingredients -->
+        <h2>Ingredients</h2>
+        <p class="ingredients">
+            <span>
+
+                • Oat flour<br>
+                • Baking soda<br>
+                • Salt<br>
+                • Unsweetened applsauce<br>
+                • Coconut sugar<br>
+                • Brown rice syrup<br>
+                • Vanilla extract<br>
+                • Dairy-free dark chocolate chips<br>
+                • Dried fruit (dried cherries, raisins, blueberries, etc.)
+            </span>
+            <span class="portion-text">Portion size: Small • 100g</span>
+        </p>
+        <hr>
+
+        <!-- Nutrition -->
+        <h2>Nutrition</h2>
+<p>
+    Calories: 210 kcal<br>
+    Total Fat: 7g<br>
+    Saturated Fat: 3g<br>
+    Carbs: 34g<br>
+    Dietary Fiber: 3g<br>
+    Sugars: 18g (Includes 10g added sugars)<br>
+    Protein: 3g<br>
+    Sodium: 115mg<br>
+</p>
+        <hr>
+
+        <!-- ORDER FORM -->
+        <h2 id="order-form">Request / Order</h2>
+
+        <div class="order-wrapper mt-4 p-4 border rounded bg-light">
+            <input aria-hidden="true" id="toggle-mode" type="checkbox">
+
+            <div class="toggle-label-wrapper">
+                <label aria-hidden="true" class="toggle-label" for="toggle-mode">
+                    <span class="toggle-delivery">Delivery</span>
+                    <span aria-hidden="true" class="toggle-ball"></span>
+                    <span class="toggle-pickup">Pickup</span>
+                </label>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="m-0">Cart Summary</h3>
+            </div>
+
+          <!-- Quantity and Voucher -->
+<div class="mb-3">
+    <label class="form-label">Your Name</label>
+    <input class="form-control" placeholder="Enter your name" type="text" required>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Quantity</label>
+    <input class="form-control" min="1" type="number" value="1" required>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Voucher Code (Optional)</label>
+    <input class="form-control me-2" placeholder="Voucher Code" type="text">
+    <button class="btn btn-secondary">Apply</button>
+</div>
+
+<hr>
+
+<!-- DELIVERY FORM -->
+<div class="delivery-form">
+    <h4>Delivery Details</h4>
+
+    <div class="mb-3">
+        <label class="form-label">Address</label>
+        <input class="form-control" placeholder="123 Main St" type="text" required>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label class="form-label">City</label>
+            <input class="form-control" placeholder="Toronto" type="text" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Province</label>
+            <input class="form-control" placeholder="ON" type="text" maxlength="2" pattern="[A-Za-z]{2}" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label">Postal Code</label>
+            <input class="form-control" placeholder="A1A1A1" type="text" maxlength="6" pattern="[A-Za-z0-9]{6}" required>
+        </div>
+    </div>
+
+    <h4 class="mt-4">Payment</h4>
+
+    <div class="mb-3">
+        <label class="form-label">Card Number</label>
+        <input class="form-control" placeholder="0000 0000 0000 0000" type="text" maxlength="19" id="card-number" required>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Security Code</label>
+            <input class="form-control" placeholder="123" type="text" maxlength="3" pattern="\d{3}" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Expiration Date</label>
+            <input class="form-control" placeholder="MM/YY" type="text" maxlength="5" id="exp-date" required>
+        </div>
+    </div>
+
+    <div class="form-check mb-4">
+        <input class="form-check-input" id="sameAddress" type="checkbox">
+        <label class="form-check-label" for="sameAddress">Same as delivery address</label>
+    </div>
+</div>
+
+<!-- PICKUP FORM -->
+<div class="pickup-form">
+    <h4>Schedule a Time</h4>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Pickup Date</label>
+            <input class="form-control" type="date" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Pickup Time</label>
+            <input class="form-control" type="time" required>
+        </div>
+    </div>
+
+    <h4 class="mt-4">Payment</h4>
+
+    <div class="mb-3">
+        <label class="form-label">Card Number</label>
+        <input class="form-control" placeholder="0000 0000 0000 0000" type="text" maxlength="19" id="card-number-pickup" required>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Security Code</label>
+            <input class="form-control" placeholder="123" type="text" maxlength="3" pattern="\d{3}" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Expiration Date</label>
+            <input class="form-control" placeholder="MM/YY" type="text" maxlength="5" id="exp-date-pickup" required>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<!-- Total + Place Order -->
+<div class="d-flex justify-content-between align-items-center mt-3">
+    <h4>Total: <strong>$12.00</strong></h4>
+    <button class="btn btn-primary btn-lg" id="place-order-btn">Place Order</button>
+</div>
+
+
+        </div><!-- /.order-wrapper -->
+
+    </div><!-- /.item-details -->
+
+</main>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- This script is only for feedback! There are ways to accomplish this in pure html and css but they are much longer! -->
+<script>
+const orderButton = document.getElementById('place-order-btn');
+
+orderButton.addEventListener('click', function() {
+    alert('Thank you! Your order has been submitted.');
+});
+
+</script>
+<!-- This script is only for input formatting! -->
+<script>
+function formatCardNumber(e) {
+    let input = e.target;
+    let value = input.value.replace(/\D/g, '');
+    let formatted = value.match(/.{1,4}/g);
+    if (formatted) input.value = formatted.join(' ');
+}
+
+function formatExpDate(e) {
+    let input = e.target;
+    let value = input.value.replace(/\D/g, '');
+    if (value.length > 2) value = value.slice(0,2) + '/' + value.slice(2,4);
+    input.value = value;
+}
+
+document.getElementById('card-number')?.addEventListener('input', formatCardNumber);
+document.getElementById('card-number-pickup')?.addEventListener('input', formatCardNumber);
+document.getElementById('exp-date')?.addEventListener('input', formatExpDate);
+document.getElementById('exp-date-pickup')?.addEventListener('input', formatExpDate);
+</script>
+
+</body>
+</html>
