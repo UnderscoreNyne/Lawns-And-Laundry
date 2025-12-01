@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodShare - Browse</title>
+    <title>Lawns and Laundry - Browse</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <!-- Custom CSS -->
@@ -23,7 +23,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">FoodShare</a>
+    <a class="navbar-brand" href="index.html">Lawns and Laundry</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -44,8 +44,8 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading">
-                    <h1>FoodShare System</h1>
-                    <span class="subheading">Some many options offered at a discount!</span>
+                    <h1>Quest Board</h1>
+                    <span class="subheading">Are you ready for an adventure?</span>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
     <input
         type="text"
         id="searchInput"
-        placeholder="Search for meals..."
+        placeholder="Search for quests..."
         class="form-control">
 </div>
 
@@ -72,7 +72,7 @@
 
             <!-- Price Range Slider -->
 <div class="col-md-3 mb-3">
-    <label class="form-label">Price Range ($0 – $20)</label>
+    <label class="form-label">Reward Range ($0 – $20)</label>
 
     <div id="price-slider"></div>
 
@@ -84,40 +84,39 @@
 
             <!-- Diet Filter -->
             <div class="col-md-3 mb-3">
-                <label class="form-label">Diet</label>
+                <label class="form-label">Difficulty</label>
                 <select class="form-control">
                     <option value="">Any</option>
-                    <option value="keto">Keto</option>
-                    <option value="dairy-free">Dairy-Free</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="high-protein">High Protein</option>
-                    <option value="paleo">Paleo</option>
+                    <option value="easy">Novice</option>
+                    <option value="medium">Intermediate</option>
+                    <option value="hard">Adept</option>
+                    <option value="challenging">Heroic</option>
                 </select>
             </div>
 
             <!-- Allergens Filter -->
             <div class="col-md-3 mb-3">
-                <label class="form-label">Allergens</label>
+                <label class="form-label">Type of Job</label>
                 <select class="form-control">
                     <option value="">Any</option>
-                    <option value="nut-free">Nut-Free</option>
-                    <option value="gluten-free">Gluten-Free</option>
-                    <option value="soy-free">Soy-Free</option>
-                    <option value="shellfish-free">Shellfish-Free</option>
-                    <option value="egg-free">Egg-Free</option>
-                    <option value="egg-free">Dairy-Free</option>
+                    <option value="delivery">Courier's Path</option>
+                    <option value="pet-related">Beastmasters Duties</option>
+                    <option value="heavy-lifting">Trials of Strength</option>
+                    <option value="cleaning">Purification Rituals</option>
+                    <option value="repairs">Craftsman's Call</option>
                 </select>
             </div>
 
             <!-- Meal Type Filter -->
             <div class="col-md-3 mb-3">
-                <label class="form-label">Portion Size</label>
+                <label class="form-label">Distance from You</label>
                 <select class="form-control">
                     <option value="">Any</option>
-                    <option value="breakfast">Light</option>
-                    <option value="lunch">Medium</option>
-                    <option value="dinner">Large</option>
-                    <option value="snack">Huge</option>
+                    <option value="breakfast">Within Your Village (0 - 2 KM)</option>
+                    <option value="lunch">Nearby Territories (2 - 5 KM)</option>
+                    <option value="lunch">Half-Day Trek (5 - 10 KM)</option>
+                    <option value="dinner">Distant Outskirts (10 - 20 KM)</option>
+                    <option value="snack">Far Beyond (20+ KM)</option>
                 </select>
             </div>
 
