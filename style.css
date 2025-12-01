@@ -448,3 +448,39 @@ body.client-login .provider-link:hover { text-decoration: underline; }
 #toggle-login:checked ~ .toggle-label-wrapper .toggle-label .toggle-ball {
     left: calc(100% - 30px);
 }
+
+
+.navbar .nav-link.active {
+    background-color: #A4B95B !important;
+    color: #000 !important;          /* dark text so it stays readable */
+    border-radius: 6px;               /* optional, smooth corners */
+    padding: 8px 12px;                /* ensures the box looks good */
+}
+
+.btn,
+button {
+    background-color: #5E7E3E !important;
+    border-color: #5E7E3E !important;
+    color: #fff !important;
+}
+
+/* Style inputs inside pickup or client/provider login/register forms */
+.pickup-form .form-control,
+.client-login .form-control,
+.provider-login .form-control {
+    background-color: #DBEBA1;
+    border: 1px solid #A4B95B; /* optional: match theme */
+    color: #000;                /* text color */
+}
+
+/* Optional: change placeholder color to make it more readable */
+.pickup-form .form-control::placeholder,
+.client-login .form-control::placeholder,
+.provider-login .form-control::placeholder {
+    color: #555;
+    opacity: 1;
+}
+
+.navbar {
+background: #5E7E3E !important;
+}
