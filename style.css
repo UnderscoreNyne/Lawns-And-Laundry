@@ -1,6 +1,7 @@
 /* --- FONTS --- */
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
 
 /* --- UNIVERSAL STYLES --- */
 body {
@@ -58,9 +59,21 @@ body {
     border-color: rgb(255, 255, 255) transparent transparent transparent;
 }
 
+.mb-3 {
+    font-family: "MedievalSharp", cursive;
+    font-weight: bold;
+    padding-top: 10px
+}
+
 .mb-4 {
     font-family: "MedievalSharp", cursive;
     font-weight: bold;
+}
+
+.lead{
+    font-family: "Cormorant Unicase", serif;
+    font-weight: 700;
+    font-size: 19px;
 }
 
 /* --- TAGS --- */
@@ -339,6 +352,13 @@ body.provider-login .form-wrapper {
     z-index: 5;
 }
 
+.form-wrapper .form-label{
+    font-family: "Cormorant Unicase", serif;
+    font-weight: bolder;
+    font-size: 20px;
+    font-style: normal;
+}
+
 body.provider-login #toggle-login { display: none; }
 
 body.provider-login .toggle-label-wrapper { position: relative; margin-bottom: 1.5rem; }
@@ -394,7 +414,8 @@ body.provider-login .provider-link:hover { text-decoration: underline; }
 
 /* --- CLIENT LOGIN/REGISTER --- */
 body.client-login {
-    background-image: url('assets/images/background-images/login-bg.jpg');
+
+    background-image: url('assets/images/background-images/login-bg.png');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -503,5 +524,17 @@ button {
 }
 
 .navbar {
-background: #5E7E3E !important;
+    background: #5E7E3E !important;
+}
+
+.navbar-brand{
+    font-family: "MedievalSharp", cursive;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
+}
+
+.nav-link{
+    font-family: "Cormorant Unicase", serif;
+    font-weight: bold;
+    font-style: normal;
 }
