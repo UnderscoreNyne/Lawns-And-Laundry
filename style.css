@@ -538,3 +538,8 @@ button {
     font-weight: bold;
     font-style: normal;
 }
+
+.btn-reset {
+    background-color: #DC3545 !important;
+    border-color: #DC3545 !important;
+}
