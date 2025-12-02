@@ -3,7 +3,6 @@
    ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
-/* Note: Seaweed Script is imported but never used - removed */
 
 /* =====================================================
    BASE/RESET STYLES
@@ -253,74 +252,9 @@ button {
 .inbox-title .scroll-image { width: 120px; }
 
 /* =====================================================
-   UNUSED STYLES (Kept for reference/future use)
-   ===================================================== */
-
-/* Page Header - Not used in current HTML files */
-.page-header {
-    position: relative;
-    color: white;
-    text-align: center;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.page-header h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-
-/* Tags - Not used in quest-based pages */
-.tag {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.4rem 0.7rem;
-    border-radius: 50%;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #fff;
-    white-space: nowrap;
-    margin-bottom: 4px;
-}
-
-/* Tag color classes - keeping for potential future use */
-.tag.vegan { background-color: #28a745; }
-.tag.high-protein { background-color: #dc143c; }
-.tag.keto { background-color: #17a2b8; }
-.tag.gluten-free { background-color: #ffc107; }
-.tag.nut-free { background-color: #20c997; }
-.tag.dairy-free { background-color: #fd7e14; }
-.tag.paleo { background-color: #008b8b; }
-.tag.light { background-color: #0dcaf0; }
-.tag.medium { background-color: #ff00ff; }
-.tag.large { background-color: #e83e8c; }
-.tag.huge { background-color: #795548; }
-.tag.egg-free { background-color: #6f42c1; }
-.tag.small { background-color: #cddc39; }
-
-/* Browse/Details pages - Not used in current quest system */
-.browse-card,
-.item-header,
-.item-card,
-.item-details,
-.masthead.browse-header,
-.masthead.details-header,
-.masthead.dashboard-header,
-.order-wrapper,
-#toggle-mode {
-    /* These styles are from a previous food delivery system */
-    /* Keeping them commented for reference if needed */
-}
-
-/* =====================================================
    RESPONSIVE UTILITIES
    ===================================================== */
-@media (max-width: 767.98px) {
-    /* Currently unused responsive styles */
-}
+
 
 @media (max-width: 576px) {
     .client-login .form-wrapper,
