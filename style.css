@@ -1,30 +1,209 @@
-/* --- FONTS --- */
+/* =====================================================
+   FONTS
+   ===================================================== */
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
+/* Note: Seaweed Script is imported but never used - removed */
 
-/* --- UNIVERSAL STYLES --- */
+/* =====================================================
+   BASE/RESET STYLES
+   ===================================================== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-.page-header {
-    position: relative;
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+.mb-3 {
+    font-family: "MedievalSharp", cursive;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.mb-4 {
+    font-family: "MedievalSharp", cursive;
+    font-weight: bold;
+}
+
+.lead {
+    font-family: "Cormorant Unicase", serif;
+    font-weight: 700;
+    font-size: 19px;
+}
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+.navbar {
+    background: #5E7E3E !important;  /* Need !important to override Bootstrap's .bg-dark */
+}
+
+.navbar-brand {
+    font-family: "MedievalSharp", cursive;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
+}
+
+.nav-link {
+    font-family: "Cormorant Unicase", serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.navbar .nav-link.active {
+    background-color: #A4B95B !important;  /* Need !important to ensure it overrides Bootstrap */
+    color: #000 !important;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.btn,
+button {
+    background-color: #5E7E3E !important;
+    border-color: #5E7E3E !important;
+    color: #fff !important;
+}
+
+.btn-reset {
+    background-color: #DC3545 !important;
+    border-color: #DC3545 !important;
+}
+/* Quest-specific button override */
+.quest-accept-button {
+    background-color: #5E7E3E;
     color: white;
-    text-align: center;
-    height: 300px;
+    border: 1px solid #2C2C2C;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.quest-accept-button:hover {
+    background-color: #4C6B2E;
+}
+
+.quest-action-btn {
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 3px solid #2C2C2C;
+    border-radius: 6px;
+}
+
+/* =====================================================
+   FORM CONTROLS
+   ===================================================== */
+.form-wrapper {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 5;
+}
+
+.form-wrapper .form-label {
+    font-family: "Cormorant Unicase", serif;
+    font-weight: bolder;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.pickup-form .form-control,
+.client-login .form-control,
+.provider-login .form-control {
+    background-color: #DBEBA1;
+    border: 1px solid #A4B95B;
+    color: #000;
+}
+
+.pickup-form .form-control::placeholder,
+.client-login .form-control::placeholder,
+.provider-login .form-control::placeholder {
+    color: #555;
+    opacity: 1;
+}
+
+/* =====================================================
+   LOGIN/REGISTER TOGGLE SWITCH
+   ===================================================== */
+#toggle-login {
+    display: none;
+}
+
+.toggle-label-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.toggle-label {
     display: flex;
     align-items: center;
-    justify-content: center;
+    background: #e9ecef;
+    border-radius: 24px;
+    padding: 6px 12px;
+    width: 100%;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+    position: relative;
 }
 
-.page-header h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+.toggle-ball {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    left: 8px;
+    top: 4px;
+    transition: left 0.28s ease;
 }
 
+#toggle-login:checked ~ .toggle-label-wrapper .toggle-label .toggle-ball {
+    left: calc(100% - 30px);
+}
+
+/* Toggle text colors */
+#toggle-login:not(:checked) ~ .toggle-label-wrapper .toggle-label .toggle-delivery { color: #000; }
+#toggle-login:not(:checked) ~ .toggle-label-wrapper .toggle-label .toggle-pickup { color: #777; }
+#toggle-login:checked ~ .toggle-label-wrapper .toggle-label .toggle-delivery { color: #777; }
+#toggle-login:checked ~ .toggle-label-wrapper .toggle-label .toggle-pickup { color: #000; }
+
+/* Form visibility states */
+.delivery-form { display: block; }
+.pickup-form { display: none; }
+#toggle-login:checked ~ .delivery-form { display: none; }
+#toggle-login:checked ~ .pickup-form { display: block; }
+
+.provider-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.provider-link:hover {
+    text-decoration: underline;
+}
+
+/* =====================================================
+   MASTHEAD/HERO SECTIONS
+   ===================================================== */
 .masthead {
     position: relative;
     background-size: cover;
@@ -59,24 +238,41 @@ body {
     border-color: rgb(255, 255, 255) transparent transparent transparent;
 }
 
-.mb-3 {
-    font-family: "MedievalSharp", cursive;
-    font-weight: bold;
-    padding-top: 10px
+/* =====================================================
+   SCROLL IMAGE COMPONENTS
+   ===================================================== */
+.scroll-image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
-.mb-4 {
-    font-family: "MedievalSharp", cursive;
-    font-weight: bold;
+/* Different sizes for different pages */
+.quest-board-title .scroll-image { width: 735px; }
+.create-title .scroll-image { width: 500px; }
+.inbox-title .scroll-image { width: 120px; }
+
+/* =====================================================
+   UNUSED STYLES (Kept for reference/future use)
+   ===================================================== */
+
+/* Page Header - Not used in current HTML files */
+.page-header {
+    position: relative;
+    color: white;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.lead{
-    font-family: "Cormorant Unicase", serif;
-    font-weight: 700;
-    font-size: 19px;
+.page-header h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
-/* --- TAGS --- */
+/* Tags - Not used in quest-based pages */
 .tag {
     display: inline-flex;
     justify-content: center;
@@ -90,7 +286,7 @@ body {
     margin-bottom: 4px;
 }
 
-/* Tag Colors */
+/* Tag color classes - keeping for potential future use */
 .tag.vegan { background-color: #28a745; }
 .tag.high-protein { background-color: #dc143c; }
 .tag.keto { background-color: #17a2b8; }
@@ -105,230 +301,70 @@ body {
 .tag.egg-free { background-color: #6f42c1; }
 .tag.small { background-color: #cddc39; }
 
-/* --- BROWSE PAGE --- */
-.browse-card {
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
-    background-color: #f8f1e7;
-    border-radius: 0.5rem;
+/* Browse/Details pages - Not used in current quest system */
+.browse-card,
+.item-header,
+.item-card,
+.item-details,
+.masthead.browse-header,
+.masthead.details-header,
+.masthead.dashboard-header,
+.order-wrapper,
+#toggle-mode {
+    /* These styles are from a previous food delivery system */
+    /* Keeping them commented for reference if needed */
 }
 
-.browse-card img {
-    width: 225px;
-    height: 225px;
-    object-fit: cover;
-    border-radius: 0.25rem;
-    margin-right: 15px;
-}
-
-.browse-card .card-body {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    flex: 1;
-}
-
-.browse-card .post-title a {
-    color: #000;
-    text-decoration: underline;
-    font-size: 1.3rem;
-}
-
-.browse-card .tags-container {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 8px 12px;
-    margin-bottom: 1rem;
-}
-
-.browse-card .bottom-row {
-    margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.browse-card .bottom-row h6 { font-size: 0.9rem; color: #6c757d; margin: 0; }
-.browse-card .bottom-row .price { font-size: 1.2rem; font-weight: bold; color: #000; margin: 0; }
-
-.masthead.browse-header {
-    background-image: url('assets/images/background-images/browse-bg.png');
-}
-
-/* --- DETAILS PAGE --- */
-.item-header {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    padding: 6rem 0 4rem 0;
-}
-
-.item-card.browse-card {
-    display: flex;
-    flex-direction: row;
-    background-color: #f8f1e7;
-    border-radius: 0.5rem;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    padding: 1.5rem;
-    margin-top: 60px;
-}
-
-.item-card img {
-    width: 225px;
-    height: 225px;
-    object-fit: cover;
-    border-radius: 0.25rem;
-    margin-right: 20px;
-}
-
-.card-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.post-title a {
-    color: #000;
-    text-decoration: underline;
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.bottom-row h6.company {
-    font-size: 1.2rem;
-    color: #6c757d;
-    margin: 0;
-}
-
-.bottom-row .price {
-    font-size: 1.7rem;
-    font-weight: bold;
-}
-
-.tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 0.5rem;
-}
-
-.item-details .portion-text {
-    font-size: 1rem;
-    color: #6c757d;
-    font-weight: 500;
-}
-
-.item-details p.ingredients {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-}
-
-.item-details .portion-text {
-    margin-left: auto;
-}
-
-.item-details hr {
-    border: 0;
-    border-top: 1px solid #dee2e6;
-    margin: 1.5rem 0;
-}
-
-.masthead.details-header {
-    background-image: url('assets/images/background-images/details-bg.jpg');
-}
-
-/* --- TOGGLE SWITCH --- */
-.order-wrapper { position: relative; }
-
-#toggle-mode { display: none; }
-
-.toggle-label-wrapper {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    z-index: 10;
-}
-
-.toggle-label {
-    display: flex;
-    align-items: center;
-    background: #e9ecef;
-    border-radius: 24px;
-    padding: 6px 10px;
-    width: 140px;
-    justify-content: space-between;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-}
-
-.toggle-label span {
-    font-weight: 700;
-    font-size: 0.85rem;
-}
-
-.toggle-ball {
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-    left: 8px;
-    top: 8px;
-    transition: left 0.28s ease;
-}
-
-#toggle-mode:checked + .toggle-label-wrapper .toggle-label .toggle-ball {
-    left: calc(100% - 34px);
-}
-
-#toggle-mode:not(:checked) + .toggle-label-wrapper .toggle-label .toggle-delivery { color: #000; }
-#toggle-mode:not(:checked) + .toggle-label-wrapper .toggle-label .toggle-pickup { color: #777; }
-#toggle-mode:checked + .toggle-label-wrapper .toggle-label .toggle-delivery { color: #777; }
-#toggle-mode:checked + .toggle-label-wrapper .toggle-label .toggle-pickup { color: #000; }
-
-.delivery-form { display: block; }
-.pickup-form { display: none; }
-
-#toggle-mode:checked ~ .delivery-form { display: none; }
-#toggle-mode:checked ~ .pickup-form { display: block; }
-
-/* --- RESPONSIVE STYLES --- */
+/* =====================================================
+   RESPONSIVE UTILITIES
+   ===================================================== */
 @media (max-width: 767.98px) {
-    .browse-card, .item-card { flex-direction: column; align-items: center; }
-    .browse-card img, .item-card img { width: 100%; height: auto; margin-right: 0; margin-bottom: 1rem; }
-    .bottom-row { width: 100%; justify-content: space-between; }
-    .tags-container { justify-content: center; }
-    .item-details p.ingredients { flex-direction: column; }
-    .item-details .portion-text { margin-left: 0; margin-top: 0.5rem; }
+    /* Currently unused responsive styles */
 }
 
-@media (max-width: 575.98px) {
-    .browse-card .tags-container { grid-template-columns: 1fr; justify-items: center; }
-    .toggle-label-wrapper { position: static; margin-left: auto; margin-top: 8px; }
-    .toggle-label { width: 120px; }
-    .toggle-ball { top: 6px; left: 6px; }
-    #toggle-mode:checked + .toggle-label-wrapper .toggle-label .toggle-ball { left: calc(100% - 30px); }
-}
+@media (max-width: 576px) {
+    .client-login .form-wrapper,
+    .provider-login .form-wrapper {
+        margin-top: 60px;
+        padding: 30px;
+    }
 
-/* --- INDEX PAGE --- */
+    .client-login .toggle-label,
+    .provider-login .toggle-label {
+        font-size: 0.9rem;
+    }
+}
+/* =====================================================
+   PAGE-SPECIFIC STYLES
+   ===================================================== */
+
+/* =====================================================
+   INDEX/HOME PAGE
+   ===================================================== */
 .masthead.index-header {
     background-image: url('assets/images/background-images/index-bg.png');
     padding: 0;
 }
 
-/* --- DASHBOARD PAGE --- */
-.masthead.dashboard-header {
-    background-image: url('assets/images/background-images/dashboard-bg.jpg');
+/* =====================================================
+   CLIENT LOGIN PAGE (Adventurer)
+   ===================================================== */
+body.client-login {
+    background-image: url('assets/images/background-images/login-bg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- PROVIDER LOGIN/REGISTER --- */
+body.client-login .navbar {
+    z-index: 10;
+}
+
+/* =====================================================
+   PROVIDER LOGIN PAGE (Patron)
+   ===================================================== */
 body.provider-login {
     background-image: url('assets/images/background-images/provider-bg.jpg');
     background-size: cover;
@@ -338,215 +374,13 @@ body.provider-login {
     flex-direction: column;
 }
 
-body.provider-login .navbar { z-index: 10; }
-
-body.provider-login .form-wrapper {
-    max-width: 500px;
-    margin: auto;
-    margin-top: 80px;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 5;
+body.provider-login .navbar {
+    z-index: 10;
 }
 
-.form-wrapper .form-label{
-    font-family: "Cormorant Unicase", serif;
-    font-weight: bolder;
-    font-size: 20px;
-    font-style: normal;
-}
-
-body.provider-login #toggle-login { display: none; }
-
-body.provider-login .toggle-label-wrapper { position: relative; margin-bottom: 1.5rem; }
-body.provider-login .toggle-label {
-    display: flex;
-    align-items: center;
-    background: #e9ecef;
-    border-radius: 24px;
-    padding: 6px 12px;
-    width: 100%;
-    justify-content: space-between;
-    cursor: pointer;
-    font-weight: bold;
-    color: #000;
-    position: relative;
-}
-
-body.provider-login .toggle-ball {
-    width: 26px;
-    height: 26px;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    transition: left 0.28s ease;
-}
-
-body.provider-login #toggle-login:checked ~ .toggle-label-wrapper .toggle-label .toggle-ball {
-    left: calc(100% - 30px);
-}
-
-body.provider-login .delivery-form { display: block; }
-body.provider-login .pickup-form { display: none; }
-body.provider-login #toggle-login:checked ~ .delivery-form { display: none; }
-body.provider-login #toggle-login:checked ~ .pickup-form { display: block; }
-
-body.provider-login .provider-link {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    font-weight: bold;
-    color: #007bff;
-    text-decoration: none;
-}
-
-body.provider-login .provider-link:hover { text-decoration: underline; }
-
-@media (max-width: 576px) {
-    body.provider-login .form-wrapper { margin-top: 60px; padding: 30px; }
-    body.provider-login .toggle-label { font-size: 0.9rem; }
-}
-
-/* --- CLIENT LOGIN/REGISTER --- */
-body.client-login {
-
-    background-image: url('assets/images/background-images/login-bg.png');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-body.client-login .navbar { z-index: 10; }
-
-body.client-login .form-wrapper {
-    max-width: 500px;
-    margin: auto;
-    margin-top: 80px;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 5;
-}
-
-body.client-login #toggle-login { display: none; }
-
-body.client-login .toggle-label-wrapper { position: relative; margin-bottom: 1.5rem; }
-body.client-login .toggle-label {
-    display: flex;
-    align-items: center;
-    background: #e9ecef;
-    border-radius: 24px;
-    padding: 6px 12px;
-    width: 100%;
-    justify-content: space-between;
-    cursor: pointer;
-    font-weight: bold;
-    color: #000;
-    position: relative;
-}
-
-body.client-login .toggle-ball {
-    width: 26px;
-    height: 26px;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    transition: left 0.28s ease;
-}
-
-body.client-login #toggle-login:checked ~ .delivery-form { display: none; }
-body.client-login #toggle-login:checked ~ .pickup-form { display: block; }
-
-body.client-login .delivery-form { display: block; }
-body.client-login .pickup-form { display: none; }
-
-body.client-login .provider-link {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    font-weight: bold;
-    color: #007bff;
-    text-decoration: none;
-}
-
-body.client-login .provider-link:hover { text-decoration: underline; }
-
-@media (max-width: 576px) {
-    body.client-login .form-wrapper { margin-top: 60px; padding: 30px; }
-    body.client-login .toggle-label { font-size: 0.9rem; }
-}
-
-#toggle-login:checked ~ .toggle-label-wrapper .toggle-label .toggle-ball {
-    left: calc(100% - 30px);
-}
-
-
-.navbar .nav-link.active {
-    background-color: #A4B95B !important;
-    color: #000 !important;          /* dark text so it stays readable */
-    border-radius: 6px;               /* optional, smooth corners */
-    padding: 8px 12px;                /* ensures the box looks good */
-}
-
-.btn,
-button {
-    background-color: #5E7E3E !important;
-    border-color: #5E7E3E !important;
-    color: #fff !important;
-}
-
-/* Style inputs inside pickup or client/provider login/register forms */
-.pickup-form .form-control,
-.client-login .form-control,
-.provider-login .form-control {
-    background-color: #DBEBA1;
-    border: 1px solid #A4B95B; /* optional: match theme */
-    color: #000;                /* text color */
-}
-
-/* Optional: change placeholder color to make it more readable */
-.pickup-form .form-control::placeholder,
-.client-login .form-control::placeholder,
-.provider-login .form-control::placeholder {
-    color: #555;
-    opacity: 1;
-}
-
-.navbar {
-    background: #5E7E3E !important;
-}
-
-.navbar-brand{
-    font-family: "MedievalSharp", cursive;
-    font-weight: bold;
-    text-shadow: 2px 2px 2px black;
-}
-
-.nav-link{
-    font-family: "Cormorant Unicase", serif;
-    font-weight: bold;
-    font-style: normal;
-}
-
-.btn-reset {
-    background-color: #DC3545 !important;
-    border-color: #DC3545 !important;
-}
-
-/* --- BROWSE/QUEST BOARD PAGE --- */
-
-/* Page-specific body styles */
+/* =====================================================
+   BROWSE/QUEST BOARD PAGE
+   ===================================================== */
 body.browse-page {
     background-image: url('assets/images/background-images/browse-wood-bg.png');
     background-size: cover;
@@ -554,7 +388,6 @@ body.browse-page {
     background-repeat: no-repeat;
 }
 
-/* Main content area */
 .browse-main {
     min-height: 100vh;
     padding: 40px 20px 80px 20px;
@@ -635,20 +468,13 @@ body.browse-page {
     background-color: #4C6B2E;
 }
 
-/* Quest Board title section */
+/* Quest Board Title */
 .quest-board-title {
     position: relative;
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
     z-index: 1;
-}
-
-.scroll-image {
-    width: 735px;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
 }
 
 .quest-text {
@@ -661,7 +487,7 @@ body.browse-page {
     height: 64px;
 }
 
-/* Quest board container */
+/* Quest Board Container */
 .quest-board-container {
     background-color: #7E593E;
     border: 7px solid #2D2016;
@@ -675,7 +501,7 @@ body.browse-page {
     z-index: 1;
 }
 
-/* Available quests panel */
+/* Available Quests Panel */
 .available-quests {
     background-color: #89A138;
     border: 7px solid #4C6B2E;
@@ -699,7 +525,7 @@ body.browse-page {
     color: white;
 }
 
-/* Quest details panel */
+/* Quest Details Panel */
 .quest-details {
     background-color: #89A138;
     border: 7px solid #4C6B2E;
@@ -728,22 +554,6 @@ body.browse-page {
     margin-bottom: 15px;
 }
 
-.quest-accept-button {
-    background-color: #5E7E3E;
-    color: white;
-    border: 1px solid #2C2C2C;
-    padding: 10px 20px;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-}
-
-.quest-accept-button:hover {
-    background-color: #4C6B2E;
-}
-
 /* Post new quest section */
 .post-quest-container {
     text-align: center;
@@ -755,9 +565,9 @@ body.browse-page {
     padding: 8px 16px;
 }
 
-/* --- INBOX/CHAT PAGE --- */
-
-/* Page-specific body styles */
+/* =====================================================
+   INBOX/CHAT PAGE
+   ===================================================== */
 body.inbox-page {
     background-image: url('assets/images/background-images/browse-wood-bg.png');
     background-size: cover;
@@ -765,7 +575,6 @@ body.inbox-page {
     background-repeat: no-repeat;
 }
 
-/* Main content area for inbox */
 .inbox-main {
     height: 100vh;
     display: flex;
@@ -785,18 +594,13 @@ body.inbox-page {
     z-index: 0;
 }
 
-/* Inbox title section */
+/* Inbox Title */
 .inbox-title {
     position: relative;
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
     z-index: 1;
-}
-
-.inbox-title .scroll-image {
-    width: 120px;
-    margin: 0 auto;
 }
 
 .inbox-text {
@@ -807,7 +611,7 @@ body.inbox-page {
     width: 140px;
 }
 
-/* Chat board container */
+/* Chat Board Container */
 .chat-board-container {
     background-color: #7E593E;
     border: 7px solid #2D2016;
@@ -823,7 +627,6 @@ body.inbox-page {
     min-height: 600px;
 }
 
-/* Chat header */
 .chat-board-header {
     background-color: #5E7E3E;
     padding: 12px 20px;
@@ -832,14 +635,13 @@ body.inbox-page {
     font-size: 1.25rem;
 }
 
-/* Chat content wrapper */
 .chat-content {
     flex: 1;
     display: flex;
     overflow: hidden;
 }
 
-/* User list panel */
+/* User List */
 .user-list {
     width: 220px;
     background-color: #89A138;
@@ -869,7 +671,7 @@ body.inbox-page {
     color: white;
 }
 
-/* Chat area */
+/* Chat Area */
 .chat-area {
     flex: 1;
     background-color: #A4B95B;
@@ -880,14 +682,12 @@ body.inbox-page {
     overflow-y: auto;
 }
 
-/* Chat messages */
 .chat-message {
     display: flex;
     align-items: flex-start;
     margin-bottom: 12px;
 }
 
-/* Left-side messages (other users) */
 .chat-message.left {
     justify-content: flex-start;
 }
@@ -907,7 +707,6 @@ body.inbox-page {
     max-width: 70%;
 }
 
-/* Right-side messages (current user) */
 .chat-message.right {
     justify-content: flex-end;
 }
@@ -932,7 +731,7 @@ body.inbox-page {
     max-width: 70%;
 }
 
-/* Chat input area */
+/* Chat Input */
 .chat-input-container {
     display: flex;
     padding: 10px 20px;
@@ -961,24 +760,14 @@ body.inbox-page {
     background-color: #4C6B2E;
 }
 
-/* --- ADVENTURER PROFILE PAGE --- */
-
-/* Page-specific body styles */
-body.adventurer-profile {
-    background-image: url('assets/images/background-images/browse-wood-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-}
-
-/* Main container for profile */
+/* =====================================================
+   PROFILE PAGES (SHARED STYLES)
+   ===================================================== */
 .profile-main {
     display: flex;
-    min-height: calc(100vh - 56px); /* full height minus navbar */
+    min-height: calc(100vh - 56px);
 }
 
-/* Left: Profile type selection sidebar */
 .profile-type-container {
     background-color: #221003;
     width: 80px;
@@ -1008,15 +797,6 @@ body.adventurer-profile {
     font-size: 1.5rem;
 }
 
-.profile-type.p-active {
-    background-color: #60381D;
-}
-
-.profile-type.a-active {
-    background-color: #7E593E;
-}
-
-/* Middle: Tabs container */
 .profile-tabs {
     background-color: #361C09;
     width: 180px;
@@ -1032,17 +812,6 @@ body.adventurer-profile {
     cursor: pointer;
     border-bottom: 1px solid #764B2D;
 }
-
-.profile-tab.accepted,
-.profile-tab.completed {
-    background-color: #764B2D;
-}
-
-.profile-tab.my-level {
-    background-color: #5B3519;
-}
-
-/* Right: Main content area */
 .profile-content {
     flex: 1;
     padding: 40px 20px;
@@ -1053,7 +822,6 @@ body.adventurer-profile {
     text-shadow: 6px 6px 2px black;
 }
 
-/* Character icon */
 .character-icon {
     width: 200px;
     height: 200px;
@@ -1069,34 +837,6 @@ body.adventurer-profile {
     color: white;
 }
 
-/* Adventure info section */
-.adventure-info {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.adventure-info p {
-    margin: 5px 0;
-    color: white;
-    font-size: 1.25rem;
-}
-
-/* Experience bar */
-.exp-bar {
-    width: 100%;
-    height: 25px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.exp-bar-fill {
-    height: 100%;
-    background-color: #A0D0F8;
-    width: 60%; /* semi-filled - this could be dynamic */
-}
-
-/* Overall rating section */
 .overall-rating {
     text-align: center;
     font-size: 2.5rem;
@@ -1111,9 +851,62 @@ body.adventurer-profile {
     margin-top: 5px;
 }
 
-/* --- PATRON PROFILE PAGE --- */
+/* =====================================================
+   ADVENTURER PROFILE PAGE
+   ===================================================== */
+body.adventurer-profile {
+    background-image: url('assets/images/background-images/browse-wood-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
 
-/* Page-specific body styles */
+body.adventurer-profile .profile-type.p-active {
+    background-color: #60381D;
+}
+
+body.adventurer-profile .profile-type.a-active {
+    background-color: #7E593E;
+}
+
+.profile-tab.accepted,
+.profile-tab.completed {
+    background-color: #764B2D;
+}
+
+.profile-tab.my-level {
+    background-color: #5B3519;
+}
+
+.adventure-info {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.adventure-info p {
+    margin: 5px 0;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.exp-bar {
+    width: 100%;
+    height: 25px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.exp-bar-fill {
+    height: 100%;
+    background-color: #A0D0F8;
+    width: 60%; /* This should be dynamic via inline style */
+}
+
+/* =====================================================
+   PATRON PROFILE PAGE
+   ===================================================== */
 body.patron-profile {
     background-image: url('assets/images/background-images/browse-wood-bg.png');
     background-size: cover;
@@ -1122,7 +915,6 @@ body.patron-profile {
     color: white;
 }
 
-/* Patron-specific profile type active states (overrides) */
 body.patron-profile .profile-type.p-active {
     background-color: #7E593E;
 }
@@ -1131,7 +923,6 @@ body.patron-profile .profile-type.a-active {
     background-color: #60381D;
 }
 
-/* Patron-specific tab styles */
 .profile-tab.listed,
 .profile-tab.past {
     background-color: #764B2D;
@@ -1141,7 +932,6 @@ body.patron-profile .profile-type.a-active {
     background-color: #5B3519;
 }
 
-/* Patron attribute bars - unique to patron profile */
 .attribute-bar-container {
     width: 80%;
     margin: 15px 0;
@@ -1176,9 +966,9 @@ body.patron-profile .profile-type.a-active {
     font-size: 1rem;
 }
 
-/* --- QUEST CREATION PAGE --- */
-
-/* Page-specific body styles */
+/* =====================================================
+   QUEST CREATION PAGE
+   ===================================================== */
 body.quest-create-page {
     background-image: url('assets/images/background-images/browse-wood-bg.png');
     background-size: cover;
@@ -1188,7 +978,6 @@ body.quest-create-page {
     padding: 0;
 }
 
-/* Main area for quest creation */
 .quest-create-main {
     min-height: 100vh;
     padding: 40px 20px;
@@ -1206,20 +995,12 @@ body.quest-create-page {
     z-index: 0;
 }
 
-/* Quest creation title section */
 .create-title {
     position: relative;
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
     z-index: 1;
-}
-
-.create-title .scroll-image {
-    width: 500px;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
 }
 
 .create-text {
@@ -1230,7 +1011,6 @@ body.quest-create-page {
     width: 260px;
 }
 
-/* Quest creation form panel */
 .create-container {
     max-width: 700px;
     background-color: #7E593E;
@@ -1253,7 +1033,6 @@ body.quest-create-page {
     font-weight: bold;
 }
 
-/* Form inputs and controls */
 .quest-custom-input,
 .quest-custom-textarea {
     background-color: #A4B95B;
@@ -1266,7 +1045,6 @@ body.quest-create-page {
     color: #2C2C2C;
 }
 
-/* Difficulty slider */
 .quest-custom-slider {
     width: 100%;
 }
@@ -1278,14 +1056,12 @@ body.quest-create-page {
     margin-top: 5px;
 }
 
-/* Quest type checkboxes */
 .quest-checkbox-list label {
     display: block;
     padding: 6px 0;
     font-size: 1rem;
 }
 
-/* Form buttons */
 .quest-button-row {
     display: flex;
     justify-content: center;
@@ -1293,14 +1069,9 @@ body.quest-create-page {
     margin-top: 20px;
 }
 
-.quest-action-btn {
-    font-weight: bold;
-    padding: 10px 20px;
-    border: 3px solid #2C2C2C !important;
-    border-radius: 6px;
-}
-
-/* Success Modal Overlay */
+/* =====================================================
+   QUEST CREATION MODAL
+   ===================================================== */
 .quest-modal-overlay {
     position: fixed;
     top: 0;
@@ -1308,13 +1079,12 @@ body.quest-create-page {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
-    display: none; /* hidden by default */
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 2000;
 }
 
-/* Modal Box */
 .quest-modal-box {
     background: #fdf6e3;
     padding: 25px;
@@ -1326,7 +1096,6 @@ body.quest-create-page {
     position: relative;
 }
 
-/* Modal portrait image */
 .quest-modal-portrait {
     width: 120px;
     height: 120px;
@@ -1338,7 +1107,6 @@ body.quest-create-page {
     background: #fff;
 }
 
-/* Modal action buttons */
 .quest-modal-actions {
     display: flex;
     justify-content: space-between;
@@ -1360,6 +1128,89 @@ body.quest-create-page {
 .quest-close-btn:hover,
 .quest-ok-btn:hover {
     background-color: #72994d;
-    color: white; /* maintain white color on hover */
+    color: white;
+}
+/* =====================================================
+   PAGE TITLE SECTIONS (Scroll + Text Overlays)
+   ===================================================== */
+
+/* Base scroll image style */
+.scroll-image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
+/* =====================================================
+   QUEST BOARD PAGE - Title Section
+   ===================================================== */
+.quest-board-title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.quest-board-title .scroll-image {
+    width: 735px;
+    max-width: 100%;
+}
+
+.quest-board-title .quest-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 295px;
+    max-width: 80%;
+    height: 64px;
+}
+
+/* =====================================================
+   QUEST CREATION PAGE - Title Section
+   ===================================================== */
+.create-title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.create-title .scroll-image {
+    width: 500px;
+    max-width: 100%;
+}
+
+.create-title .create-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+}
+
+/* =====================================================
+   INBOX PAGE - Title Section
+   ===================================================== */
+.inbox-title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.inbox-title .scroll-image {
+    width: 535px;  /* Restored original size for inbox */
+    max-width: 100%;
+}
+
+.inbox-title .inbox-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+}
