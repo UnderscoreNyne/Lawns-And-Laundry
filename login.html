@@ -56,7 +56,7 @@
                 <label class="form-label">Password</label>
                 <input class="form-control" type="password" placeholder="Enter your password" required>
             </div>
-            <button class="btn btn-primary w-100">Login</button>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
     </div>
 
@@ -85,7 +85,7 @@
             <label class="form-label">Date of Birth</label>
             <input class="form-control" type="date" required>
         </div>
-            <button class="btn btn-success w-100">Register</button>
+            <button type="submit" class="btn btn-success w-100">Register</button>
         </form>
     </div>
 
@@ -94,5 +94,31 @@
 </div>
 
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Check if form is valid (HTML5 validation)
+        if (!form.checkValidity()) {
+            form.reportValidity(); // This shows the validation messages
+            return; // Stop here if invalid
+        }
+
+        // If we get here, form is valid
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+
+        // Optional: Show loading state
+        btn.textContent = 'Loading...';
+        btn.disabled = true;
+
+        // Redirect after brief delay
+        setTimeout(() => {
+            window.location.href = 'browse.html';
+        }, 500);
+    });
+});
+</script>
 </body>
 </html>
